@@ -25,7 +25,7 @@ class OpenImagesCaptionDataset:
         img_info = {}
         fname = self.metadata[index]['image_id']
         img_info["width"], img_info["height"] = imagesize.get(os.path.join(self._image_root, f"{fname}.jpg"))
-        return self.metadata[index]
+        return img_info
 
     def __len__(self):
         return len(self.metadata)
