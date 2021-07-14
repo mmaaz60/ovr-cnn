@@ -16,6 +16,15 @@ class DatasetCatalog(object):
             "ann_file": "concap/validation.json"
         },
 
+        "openimages_captions_train": {
+            "img_dir": "openimages/images/train",
+            "ann_file": "openimages/train.json"
+        },
+        "openimages_captions_val": {
+            "img_dir": "openimages/images/val",
+            "ann_file": "openimages/val.json"
+        },
+
         "coco_captions_train": {
             "img_dir": "coco/train2017",
             "ann_file": "coco/annotations/captions_train2017.json"
@@ -227,6 +236,17 @@ class DatasetCatalog(object):
             )
             return dict(
                 factory="ConCapDataset",
+                args=args,
+            )
+        elif "openimages" in name:
+            data_dir = DatasetCatalog.DATA_DIR
+            attrs = DatasetCatalog.DATASETS[name]
+            args = dict(
+                root=os.path.join(data_dir, attrs["img_dir"]),
+                ann_file=os.path.join(data_dir, attrs["ann_file"]),
+            )
+            return dict(
+                factory="OpenImagesCaptionDataset",
                 args=args,
             )
         raise RuntimeError("Dataset not available: {}".format(name))

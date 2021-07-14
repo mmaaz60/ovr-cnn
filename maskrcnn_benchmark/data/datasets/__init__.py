@@ -8,6 +8,7 @@ from .cityscapes import CityScapesDataset
 
 from .coco_captions import COCOCaptionsDataset
 from .conceptual_captions import ConCapDataset
+from .openimages_captions import OpenImagesCaptionDataset
 
 __all__ = [
     "COCODataset",
@@ -18,4 +19,5 @@ __all__ = [
 
     "COCOCaptionsDataset",
     "ConCapDataset",
+    "OpenImagesCaptionDataset",
 ]
