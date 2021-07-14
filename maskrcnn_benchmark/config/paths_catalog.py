@@ -18,11 +18,11 @@ class DatasetCatalog(object):
 
         "openimages_captions_train": {
             "img_dir": "openimages/images/train",
-            "ann_file": "openimages/train.json"
+            "ann_file": "openimages/open_images_train_v6_captions.jsonl"
         },
         "openimages_captions_val": {
             "img_dir": "openimages/images/val",
-            "ann_file": "openimages/val.json"
+            "ann_file": "openimages/open_images_validation_captions.jsonl"
         },
 
         "coco_captions_train": {
